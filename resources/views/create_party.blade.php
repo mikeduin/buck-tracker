@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="row">
-    <a href="party/create">Create a Party</a>
+  <div class="">
+    This is the party creation page
   </div>
-
 @endsection
