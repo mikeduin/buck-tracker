@@ -13,11 +13,25 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+// Route::get('party/create', [
+//   'uses' => 'PartyController@createParty',
+//   'as' => 'party.create'
+// ]);
+//
+// Route::post('party/newParty', 'PartyController@newParty');
+
+
 
 Route::group(['prefix' => 'party'], function () {
   Route::get('create', [
     'uses' => 'PartyController@createParty',
     'as' => 'party.create'
+  ]);
+
+  Route::post('newParty', [
+    'uses' => 'PartyController@newParty',
+    'as' => 'party.newParty'
   ]);
 });
