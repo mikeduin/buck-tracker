@@ -22,6 +22,12 @@ Route::get('/', function () {
 //
 // Route::post('party/newParty', 'PartyController@newParty');
 
+Route::group(['prefix' => 'users'], function () {
+  Route::get('register', [
+    'uses' => 'UserController@register',
+    'as' => 'users.register'
+  ]);
+});
 
 
 Route::group(['prefix' => 'party'], function () {
@@ -39,5 +45,5 @@ Route::group(['prefix' => 'party'], function () {
     'uses' => 'PartyController@index',
     'as' => 'party.index'
   ]);
-  
+
 });
