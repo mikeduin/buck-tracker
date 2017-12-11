@@ -8,7 +8,7 @@ use App\Party;
 class PartyController extends Controller
 {
     public function createParty () {
-      return view ('create_party');
+      return view ('parties/create_party');
     }
 
     public function newParty (Request $request) {
@@ -18,6 +18,11 @@ class PartyController extends Controller
       ]);
       $party->save();
 
-      return redirect()->route('welcome');
+      return redirect()->route('party.index');
+    }
+
+    public function index () {
+      $parties = Party::all();
+      return view ('parties/index')->with('parties', $parties);
     }
 }

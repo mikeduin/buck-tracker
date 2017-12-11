@@ -34,4 +34,10 @@ Route::group(['prefix' => 'party'], function () {
     'uses' => 'PartyController@newParty',
     'as' => 'party.newParty'
   ]);
+
+  Route::get('index', [
+    'uses' => 'PartyController@index',
+    'as' => 'party.index'
+  ]);
+  
 });
